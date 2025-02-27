@@ -1,0 +1,18 @@
+<div class="layout-container " [ngClass]="containerClass">
+  <div class="flex-column justify-content-between">
+    <div class="sticky-top-bar pt-1">
+      <app-topbar class="px-5"></app-topbar>
+      <hr class="border-primary z-5">
+    </div>
+    <div class="layout-content-wrapper   mostly-customized-scrollbar">
+      <div>
+        <app-breadcrumb class="content-breadcrumb"></app-breadcrumb>
+        <div class="layout-content ">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <app-profilemenu></app-profilemenu>
+</div>

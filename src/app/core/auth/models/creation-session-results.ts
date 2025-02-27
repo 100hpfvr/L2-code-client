@@ -1,0 +1,15 @@
+export enum CreateSessionResults {
+  CreatedWithSuccess = 'CreatedWithSuccess',
+  IdentifierNotFound = 'IdentifierNotFound',
+  InvalidCredentials = 'InvalidCredentials',
+  ClientApplicationNotFound = 'ClientApplicationNotFound',
+  ClientApplicationInactive = 'ClientApplicationInactive',
+  ClientApplicationBuildNotSupported = 'ClientApplicationBuildNotSupported',
+  AccessForbidden = 'AccessForbidden',
+  ApplicationNotSupported = 'ApplicationNotSupported',
+  ProviderInactive = 'ProviderInactive',
+  ProviderBloqued = 'ProviderBloqued',
+  ProviderWithPasswordChangePending = 'ProviderWithPasswordChangePending',
+  ReleasedEmployees = 'ReleasedEmployees',
+  UnknowError = 'UnknowError',
+}
