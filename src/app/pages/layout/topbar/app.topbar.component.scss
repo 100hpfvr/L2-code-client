@@ -1,0 +1,10 @@
+.sticky-top-bar {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100%;
+    // color: #fff; /* Cor do texto na barra */
+    // padding-top: 1rem ; /* Espaçamento interno */
+    // padding-bottom: 1rem ; /* Espaçamento interno */
+    z-index: 4; /* Garante que a barra esteja acima de outros elementos */
+
+}

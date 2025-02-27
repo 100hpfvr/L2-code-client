@@ -1,5 +1,29 @@
-
-<p-table [value]="contacts">
-
-</p-table>
-<p-button [label]="'testeeeee'"> </p-button>
+<action-button [route]="route.url">
+  <p-button [label]="'testeeeee'"></p-button>
+</action-button>
+<div class="card border-none surface-section text-center min">
+  <p-table [value]="contacts">
+    <ng-template #header>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Celular</th>
+        <th>Telefone</th>
+        <th>Favorito</th>
+        <th>Ativo</th>
+        <th>Data Cadastro</th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-contact>
+      <tr>
+        <td>{{ contact.nome }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.celular }}</td>
+        <td>{{ contact.telefone }}</td>
+        <td>{{ contact.favorito }}</td>
+        <td>{{ contact.ativo }}</td>
+        <td>{{ contact.dataCadastro }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
