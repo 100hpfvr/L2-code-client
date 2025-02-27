@@ -1,4 +1,4 @@
-import Material from "@primeng/themes/material";
+import Material from "@primeng/themes/aura";
 import {definePreset} from "@primeng/themes";
 
 export const L2Material = definePreset(Material, {
