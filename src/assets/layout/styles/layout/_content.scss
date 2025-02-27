@@ -1,0 +1,23 @@
+.layout-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+  max-height: 75vh;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.sticky-top-bar {
+  position: sticky !important;
+  top: 0 !important;
+  width: 100%;
+  z-index: 4;
+}
+
+
+.footer-height{
+  margin: 10px;
+  height: 1rem;
+}
