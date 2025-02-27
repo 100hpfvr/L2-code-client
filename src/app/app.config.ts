@@ -5,7 +5,7 @@ import {routes} from './app.routes';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {providePrimeNG} from 'primeng/config';
 import {provideHttpClient, withInterceptorsFromDi} from '@angular/common/http';
-import {L2Material} from '../assets/layout/L2Material';
+import {L2Material} from '../assets/theme/L2Material';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,9 +18,8 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: L2Material,
         options: {
-          prefix: 'p',
           darkModeSelector: 'light',
-          cssLayer: false
+          cssLayer: true
         }
 
       }

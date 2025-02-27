@@ -1,0 +1,19 @@
+/* Layout */
+@use "assets/layout/styles/layout/layout.scss";
+
+// @use "primeng/resources/themes/saga-orange/theme.css"; //
+@use "assets/layout/styles/theme/theme-light/orange/theme.css";
+@use "primeflex/primeflex.css";
+@use "primeicons/primeicons.css";
+
+/* Demos */
+@use "assets/demo/styles/flags/flags.css";
+//@import "assets/demo/styles/badges.scss";
+
+//:root {
+//  --surface-ground: linear-gradient(180deg, #ffb7b7 0%, #ffe1e1 11.4%, #FFFBF5 59.9%);
+//}
+
+body {
+  background: var(--surface-ground);
+}
