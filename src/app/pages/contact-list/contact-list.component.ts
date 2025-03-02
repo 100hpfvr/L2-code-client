@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {Button, ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
 import {Contact} from '../../models/contact';
@@ -14,7 +14,10 @@ import {Router} from '@angular/router';
   ],
   templateUrl: './contact-list.component.html',
 })
-export class ContactListComponent {
+export class ContactListComponent implements OnInit{
+  ngOnInit(): void {
+
+  }
   protected route = inject(Router);
 
   contacts: Contact[] = []

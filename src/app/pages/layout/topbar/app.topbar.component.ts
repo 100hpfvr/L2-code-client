@@ -8,7 +8,7 @@ import {LayoutService} from '../layout.service';
     selector: 'app-topbar',
     templateUrl: './app.topbar.component.html',
     styleUrl: './app.topbar.component.scss',
-    imports: [AppBreadcrumbComponent, RenderActionButtonComponent]
+    imports: [ RenderActionButtonComponent]
 })
 export class AppTopbarComponent {
   @ViewChild('menubutton') menuButton!: ElementRef;

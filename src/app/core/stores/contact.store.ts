@@ -1,38 +1,34 @@
 import {inject} from "@angular/core";
 import {signalStore, withState, withMethods, patchState, withComputed, withHooks} from "@ngrx/signals";
+import {Contact} from '../../models/contact';
+import {ContactService} from '../services/contact.service';
 
-type ContactState = {
-  id: number | null;
-  nome: string;
-  email: string | null;
-  celular: string;
-  telefone?: string | null;
-  favorito: 'S' | 'N';
-  ativo: 'S' | 'N';
-  dataCadastro: Date | null;
+
+export type ContacFilter = "all" | "favorite" | "not favorite"
+export type ContactStore = {
+  contacts: Contact[];
+  loading: boolean,
+  filter: ContacFilter
+
 }
 
-const initialState: ContactState = {
-  id: null,
-  nome: "",
-  email: null,
-  celular: "",
-  telefone: null,
-  favorito: "N",
-  ativo: "S",
-  dataCadastro: null,
+const initialState: ContactStore = {
+  contacts: [],
+  loading: false,
+  filter: "all"
 }
 
 export const ContactStore = signalStore(
   {providedIn: 'root'},
-
   withState(initialState),
+  withMethods((store, contactService = inject(ContactService)) => ({
 
-  withMethods((store, contactRepository = inject(ContactRepository)) => ({
+    async loadAll(){
+          patchState(store, {loading: true})
+          const contacts = await contactService.getAll()
+    }
 
-    save: (contact: Contact) => {
-      contactRepository.save(contact);
-    },
 
-    }),
-  ))
+
+  })),
+)
