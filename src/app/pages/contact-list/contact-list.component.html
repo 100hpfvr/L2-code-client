@@ -1,11 +1,11 @@
 <action-button [route]="route.url">
-  <p-button [label]="'Novo Contato'" [icon]="'pi pi-plus'" ></p-button>
+  <p-button [label]="'Novo Contato'" [icon]="'pi pi-plus'"></p-button>
 </action-button>
 <div class="card border-none surface-section text-center min">
   <p-table [value]="contacts">
     <ng-template #header>
       <tr>
-        <th>Favorito</th>
+        <th style="width: 4rem"></th>
         <th>Nome</th>
         <th>E-mail</th>
         <th>Celular</th>
@@ -16,18 +16,23 @@
     </ng-template>
     <ng-template #body let-contact>
       <tr>
-        <td>
-          @if (contact.ativo == 'S') {
-            <p-badge value="Ativo" [severity]="'success'"></p-badge>
-          } @else{
-            <p-badge value="Inativo" [severity]="'warn'" ></p-badge>
-          }
+        <td class="text-center  text-yellow-500"> @if (contact.favorito === 'S') {
+          <i class="pi pi-star-fill"></i>
+        } @else {
+          <i class="pi pi-star"></i>
+        }
         </td>
         <td>{{ contact.nome }}</td>
         <td>{{ contact.email }}</td>
         <td>{{ contact.celular }}</td>
         <td>{{ contact.telefone }}</td>
-        <td>{{ contact.favorito }}</td>
+        <td>
+          @if (contact.ativo == 'S') {
+            <p-badge value="Ativo" [severity]="'success'"></p-badge>
+          } @else {
+            <p-badge value="Inativo" [severity]="'danger'"></p-badge>
+          }
+        </td>
         <td>{{ contact.dataCadastro | date: 'dd/MM/yyy' }}</td>
       </tr>
     </ng-template>
