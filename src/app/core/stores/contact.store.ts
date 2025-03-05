@@ -23,12 +23,10 @@ export const ContactStore = signalStore(
   withState(initialState),
   withMethods((store, contactService = inject(ContactService)) => ({
 
-    async loadAll(){
-          patchState(store, {loading: true})
-          const contacts = await contactService.getAll()
+    async loadAll() {
+      patchState(store, {loading: true})
+      const contacts = await contactService.getAll()
+      return contacts.data
     }
-
-
-
   })),
 )
