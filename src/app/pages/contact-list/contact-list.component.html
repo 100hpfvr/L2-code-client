@@ -5,24 +5,30 @@
   <p-table [value]="contacts">
     <ng-template #header>
       <tr>
+        <th>Favorito</th>
         <th>Nome</th>
         <th>E-mail</th>
         <th>Celular</th>
         <th>Telefone</th>
-        <th>Favorito</th>
-        <th>Ativo</th>
+        <th>Status</th>
         <th>Data Cadastro</th>
       </tr>
     </ng-template>
     <ng-template #body let-contact>
       <tr>
+        <td>
+          @if (contact.ativo == 'S') {
+            <p-badge value="Ativo" [severity]="'success'"></p-badge>
+          } @else{
+            <p-badge value="Inativo" [severity]="'warn'" ></p-badge>
+          }
+        </td>
         <td>{{ contact.nome }}</td>
         <td>{{ contact.email }}</td>
         <td>{{ contact.celular }}</td>
         <td>{{ contact.telefone }}</td>
         <td>{{ contact.favorito }}</td>
-        <td>{{ contact.ativo }}</td>
-        <td>{{ contact.dataCadastro }}</td>
+        <td>{{ contact.dataCadastro | date: 'dd/MM/yyy' }}</td>
       </tr>
     </ng-template>
   </p-table>

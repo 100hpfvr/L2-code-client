@@ -5,6 +5,8 @@ import {Contact} from '../../models/contact';
 import {ActionButtonComponent} from '../../shared/action-button/action-button.component';
 import {Router} from '@angular/router';
 import {ContactStore} from '../../core/stores/contact.store';
+import {DatePipe} from '@angular/common';
+import {Badge} from 'primeng/badge';
 
 @Component({
   selector: 'app-contact-list',
@@ -12,6 +14,8 @@ import {ContactStore} from '../../core/stores/contact.store';
     ButtonModule,
     TableModule,
     ActionButtonComponent,
+    DatePipe,
+    Badge,
   ],
   templateUrl: './contact-list.component.html',
 })
