@@ -1,5 +1,5 @@
 <action-button [route]="route.url">
-  <p-button [label]="'Novo Contato'" [icon]="'pi pi-plus'"></p-button>
+  <p-button [label]="'Novo Contato'" (click)="openContactModal()" [icon]="'pi pi-plus'"></p-button>
 </action-button>
 <div class="card border-none surface-section text-center min">
   <p-table [value]="contacts">
@@ -16,7 +16,7 @@
     </ng-template>
     <ng-template #body let-contact>
       <tr>
-        <td class="text-center  text-yellow-500"> @if (contact.favorito === 'S') {
+        <td class="text-center  text-yellow-500" (click)="contactStore.setFavorite(contact)"> @if (contact.favorito === 'S') {
           <i class="pi pi-star-fill"></i>
         } @else {
           <i class="pi pi-star"></i>

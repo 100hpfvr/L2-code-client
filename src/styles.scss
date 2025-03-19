@@ -17,3 +17,8 @@
 body {
   background: var(--surface-ground);
 }
+
+p-floatlabel {
+ display: flex;
+  flex-direction: column;
+}
